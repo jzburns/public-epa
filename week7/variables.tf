@@ -1,10 +1,8 @@
+#######################################################################
+## please change this to your own project ID
+#######################################################################
 variable "project_id" {
   description = "The project ID to deploy resources into"
-  default   = "epa-flite-2021"
-}
-
-variable "subnetwork_project" {
-  description = "The project ID where the desired subnetwork is provisioned"
   default   = "epa-flite-2021"
 }
 
