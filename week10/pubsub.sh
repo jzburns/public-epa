@@ -3,7 +3,7 @@
 #######################################################
 ## the code for the producer (publisher)
 #######################################################
-gcloud pubsub topics publish epa-topic-1 --message="This is a greate message"
+gcloud pubsub topics publish epa-topic-1 --message="This is a great message"
 
 sleep 3
 #######################################################
