@@ -1,11 +1,8 @@
 provider "google" {
 }
 
-locals {
-}
-
-resource "google_pubsub_topic" "pubsub-v1" {
-  name = "news-topic"
+resource "google_pubsub_topic" "pubsub-topic" {
+  name = "epa-topic-1"
 
   # A label is a key-value pair that helps you organize your Google Cloud resources. 
   # You can attach a label to each resource, then filter the resources based on their labels. 
@@ -19,3 +16,15 @@ resource "google_pubsub_topic" "pubsub-v1" {
   message_retention_duration = "86600s"
 }
 
+resource "google_pubsub_subscription" "pubsub-subs" {
+  name = "epa-subs-1"
+  # notice that here we use the topic name from
+  # google_pubsub_topic.pubsub-topic declared above
+  topic = google_pubsub_topic.pubsub-topic.name
+
+  ack_deadline_seconds = 20
+
+  labels = {
+    activity = "epa-labs"
+  }
+}
