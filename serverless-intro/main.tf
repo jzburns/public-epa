@@ -9,7 +9,7 @@ resource "google_storage_bucket" "bucket" {
 resource "google_storage_bucket_object" "archive" {
   name   = "index.zip"
   bucket = google_storage_bucket.bucket.name
-  source = "/home/jzburns/public-epa/serverless/gcf/index.zip"
+  source = "/home/jzburns/public-epa/serverless-intro/gcf/index.zip"
 }
 
 resource "google_cloudfunctions_function" "function" {
