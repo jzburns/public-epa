@@ -23,6 +23,22 @@ resource "google_pubsub_subscription" "pubsub-subs" {
   topic = google_pubsub_topic.pubsub-topic.name
 
   ack_deadline_seconds = 20
+  
+  # in order subscriber
+  enable_message_ordering = true
+  
+  labels = {
+    activity = "epa-labs"
+  }
+}
+
+resource "google_pubsub_subscription" "pubsub-subs-2" {
+  name = "epa-subs-2"
+  # notice that here we use the topic name from
+  # google_pubsub_topic.pubsub-topic declared above
+  topic = google_pubsub_topic.pubsub-topic.name
+
+  ack_deadline_seconds = 20
 
   labels = {
     activity = "epa-labs"

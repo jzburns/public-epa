@@ -15,3 +15,8 @@ sleep 3
 ## the code for the subscriber (consumer)
 #######################################################
 gcloud pubsub subscriptions pull epa-subs-1 --auto-ack
+
+#######################################################
+## the code for the subscriber-2 (consumer-2)
+#######################################################
+gcloud pubsub subscriptions pull epa-subs-2 --auto-ack
